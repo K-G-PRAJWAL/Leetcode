@@ -2,7 +2,7 @@ package com.kgprajwal.leetcodejavasolutions;
 
 import java.util.ArrayList;
 
-public class LeaSimilarTrees {
+public class LeafSimilarTrees {
     private void dfs(TreeNode root, ArrayList<Integer> arr) {
         if (root != null) {
             if (root.left == null && root.right == null) arr.add(root.val);
