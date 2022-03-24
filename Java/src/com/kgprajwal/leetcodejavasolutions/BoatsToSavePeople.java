@@ -1,5 +1,7 @@
 package com.kgprajwal.leetcodejavasolutions;
 
+import java.util.Arrays;
+
 public class BoatsToSavePeople {
     public int numRescueBoats(int[] people, int limit) {
         Arrays.sort(people);
