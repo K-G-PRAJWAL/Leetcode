@@ -25,3 +25,19 @@ class Solution:
             return -1
         else:
             return ans[dst]
+
+    # Bellman-Ford
+    def findCheapestPrice_2(self, n: int, flights: List[List[int]], src: int, dst: int, k: int) -> int:
+        prices = [float('inf')]*n
+        prices[src] = 0
+
+        while k >= 0:
+            tmp_prices = prices.copy()
+            for from_node, to_node, price in flights:
+                if prices[from_node] == float("inf"):
+                    continue
+                if prices[from_node] + price < tmp_prices[to_node]:
+                    tmp_prices[to_node] = prices[from_node]+price
+            prices = tmp_prices
+            k -= 1
+        return -1 if prices[to_node] == float('inf') else prices[to_node]
